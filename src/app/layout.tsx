@@ -35,7 +35,7 @@ export default function RootLayout({
         )}
       >
         <Badge className="absolute right-0 top-0">
-          Phiên bản 0.0.1 thử nghiệm
+          Phiên bản 0.1.0 thử nghiệm
         </Badge>
         <SpeedInsights />
         <Analytics />
