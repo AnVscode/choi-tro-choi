@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 import SystemDetect from "@/components/system-detect";
+import { Badge } from "@/components/ui/badge";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -29,14 +30,17 @@ export default function RootLayout({
     <html lang="vi">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-custombackground font-sans antialiased",
           fontSans.variable,
         )}
       >
+        <Badge className="absolute right-0 top-0">
+          Phiên bản 0.0.1 thử nghiệm
+        </Badge>
         <SpeedInsights />
         <Analytics />
         <SystemDetect />
-        <main>{children}</main>
+        <main className="container">{children}</main>
         <Toaster />
       </body>
     </html>

@@ -21,7 +21,7 @@ export default function SystemDetect() {
         const androidVersion = userAgent.match(/Android\s+([\d.]+)/i);
         setVersion(androidVersion ? androidVersion[1] : "Không xác định");
         toast.warning(
-          `Bạn đang truy cập trang web từ thiết bị sử dụng ${os} ${version}. `,
+          `Bạn đang truy cập trang web từ thiết bị ${os} ${version}. Sử dụng Windows sẽ đem lại trải nghiệm tốt nhất`,
           {
             position: "top-center",
             duration: 15000,
