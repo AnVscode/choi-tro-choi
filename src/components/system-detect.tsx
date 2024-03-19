@@ -1,13 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import * as React from "react";
 
 import { toast } from "sonner";
 
 export default function SystemDetect() {
-  const [os, setOs] = useState<string>("...Loading");
-  const [version, setVersion] = useState<string>("...Loading");
+  const [os, setOs] = React.useState<string>("...Loading");
+  const [version, setVersion] = React.useState<string>("...Loading");
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (typeof window !== "undefined") {
       const userAgent = navigator.userAgent;
 
@@ -21,7 +21,7 @@ export default function SystemDetect() {
         const androidVersion = userAgent.match(/Android\s+([\d.]+)/i);
         setVersion(androidVersion ? androidVersion[1] : "Không xác định");
         toast.warning(
-          `Bạn đang truy cập trang web từ thiết bị sử dụng ${os} ${version}. Để có trải nghiệm tốt nhất hãy sử dụng Windows`,
+          `Bạn đang truy cập trang web từ thiết bị ${os} ${version}. Sử dụng Windows sẽ đem lại trải nghiệm tốt nhất`,
           {
             position: "top-center",
             duration: 15000,
@@ -35,7 +35,7 @@ export default function SystemDetect() {
           iosVersion ? iosVersion[1].replace(/_/g, ".") : "Không xác định",
         );
         toast.warning(
-          `Bạn đang truy cập trang web từ thiết bị sử dụng ${os} ${version}. Để có trải nghiệm tốt nhất hãy sử dụng Windows`,
+          `Bạn đang truy cập trang web từ thiết bị sử dụng ${os} ${version}. Sử dụng Windows để đem lại trải nghiệm tốt nhất`,
           {
             position: "top-center",
             duration: 15000,
@@ -59,5 +59,5 @@ export default function SystemDetect() {
     }
   }, [os, version]);
 
-  return <div></div>;
+  return <div className="absolute"></div>;
 }
