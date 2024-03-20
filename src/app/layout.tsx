@@ -34,13 +34,13 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
+        <SpeedInsights />
         <Badge className="absolute right-0 top-0">
           Phiên bản 0.1.0 thử nghiệm
         </Badge>
-        <SpeedInsights />
         <Analytics />
         <SystemDetect />
-        <main className="container">{children}</main>
+        <main className="container h-full">{children}</main>
         <Toaster />
       </body>
     </html>

@@ -59,5 +59,5 @@ export default function SystemDetect() {
     }
   }, [os, version]);
 
-  return <div></div>;
+  return <div className="absolute"></div>;
 }
