@@ -1,13 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import * as React from "react";
 
 import { toast } from "sonner";
 
 export default function SystemDetect() {
-  const [os, setOs] = useState<string>("...Loading");
-  const [version, setVersion] = useState<string>("...Loading");
+  const [os, setOs] = React.useState<string>("...Loading");
+  const [version, setVersion] = React.useState<string>("...Loading");
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (typeof window !== "undefined") {
       const userAgent = navigator.userAgent;
 

@@ -9,7 +9,7 @@ interface IAuthLayout {
 
 export default function AuthLayout({ children }: IAuthLayout) {
   return (
-    <div className="flex gap-2 justify-center items-center h-screen">
+    <div className="flex gap-2 justify-center items-center h-screen relative">
       <div className="flex-1 flex justify-center max-lg:hidden">
         <Introduce />
       </div>

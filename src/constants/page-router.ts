@@ -9,7 +9,7 @@ type pageRouterType = {
 export const pageRouter: pageRouterType = {
   home: {
     pathname: "home",
-    url: "/home",
+    url: "/",
   },
 
   auth: {
