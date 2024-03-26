@@ -40,7 +40,7 @@ export default function Introduce() {
         ]}
       >
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {Array.from({ length: 5 }).map((_, index: number) => (
             <CarouselItem key={index}>
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
