@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { pageRouter } from "@/constants/page-router";
+import { appRouter } from "@/constants/app-router";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 export default function FormSignIn() {
@@ -13,7 +13,7 @@ export default function FormSignIn() {
 
   const handlerBackToHome = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    appRouterInstance.push(pageRouter.home.url);
+    appRouterInstance.push(appRouter.home.url);
   };
 
   return (

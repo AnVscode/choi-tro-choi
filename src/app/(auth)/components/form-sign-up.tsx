@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { pageRouter } from "@/constants/page-router";
+import { appRouter } from "@/constants/app-router";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 export default function FormSignUp() {
@@ -20,7 +20,7 @@ export default function FormSignUp() {
 
   const handlerBackToHome = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    appRouterInstance.push(pageRouter.home.url);
+    appRouterInstance.push(appRouter.home.url);
   };
 
   return (

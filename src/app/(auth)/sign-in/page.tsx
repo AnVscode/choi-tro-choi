@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { pageRouter } from "@/constants/page-router";
+import { appRouter } from "@/constants/app-router";
 import FormSignIn from "@/app/(auth)/components/form-sign-in";
 
 export default function SignInPage() {
@@ -18,7 +18,7 @@ export default function SignInPage() {
           Chào mừng bạn đến với chơi trò chơi, nếu chưa có tài khoản, bạn có thể
           đăng ký tài khoản mới{" "}
           <Link
-            href={pageRouter.auth.signUp.url}
+            href={appRouter.auth.signUp.url}
             className="underline font-bold"
           >
             tại đây
