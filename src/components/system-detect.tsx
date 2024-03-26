@@ -1,6 +1,5 @@
 "use client";
 import * as React from "react";
-
 import { toast } from "sonner";
 
 export default function SystemDetect() {
@@ -13,8 +12,6 @@ export default function SystemDetect() {
 
       const isAndroid: boolean = /Android/i.test(userAgent);
       const isIos: boolean = /iPhone|iPad|iPod/i.test(userAgent);
-      const isWindows: boolean = /IEMobile|Windows/i.test(userAgent);
-      const isMacOs: boolean = /Macintosh/i.test(userAgent);
 
       if (isAndroid) {
         setOs("Android");
@@ -29,7 +26,9 @@ export default function SystemDetect() {
             classNames: { title: "text-center" },
           },
         );
-      } else if (isIos) {
+      }
+
+      if (isIos) {
         setOs("iOS");
         const iosVersion: RegExpMatchArray | null =
           userAgent.match(/OS\s+(\d+_\d+)/i);
@@ -44,23 +43,6 @@ export default function SystemDetect() {
             classNames: { title: "text-center" },
           },
         );
-      } else if (isWindows) {
-        setOs("Windows");
-        const windowsVersion: RegExpMatchArray | null = userAgent.match(
-          /Windows\s+NT\s+([\d.]+)/i,
-        );
-        setVersion(windowsVersion ? windowsVersion[1] : "Không xác định");
-      } else if (isMacOs) {
-        setOs("MacOS");
-        const macOsVersion: RegExpMatchArray | null = userAgent.match(
-          /Mac\s+OS\s+X\s+([\d_]+)/i,
-        );
-        setVersion(
-          macOsVersion ? macOsVersion[1].replace(/_/g, ".") : "Không xác định",
-        );
-      } else {
-        setOs("Không xác định");
-        setVersion("Không xác định");
       }
     }
   }, [os, version]);
