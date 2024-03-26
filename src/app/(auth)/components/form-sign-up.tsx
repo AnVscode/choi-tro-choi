@@ -13,9 +13,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { pageRouter } from "@/constants/page-router";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 export default function FormSignUp() {
-  const appRouterInstance = useRouter();
+  const appRouterInstance: AppRouterInstance = useRouter();
 
   const handlerBackToHome = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -40,19 +41,19 @@ export default function FormSignUp() {
           <Input id="password" placeholder="Nhập lại mật khẩu của bạn" />
         </div>
 
-        <div className="flex flex-col space-y-1.5">
-          <Label htmlFor="account_type">Loại tài khoản</Label>
-          <Select>
-            <SelectTrigger id="User">
-              <SelectValue placeholder="Loại tài khoản" />
-            </SelectTrigger>
+        {/*<div className="flex flex-col space-y-1.5">*/}
+        {/*  <Label htmlFor="account_type">Loại tài khoản</Label>*/}
+        {/*  <Select>*/}
+        {/*    <SelectTrigger id="User">*/}
+        {/*      <SelectValue placeholder="Loại tài khoản" />*/}
+        {/*    </SelectTrigger>*/}
 
-            <SelectContent position="popper">
-              <SelectItem value="Admin">Admin</SelectItem>
-              <SelectItem value="User">Người dùng</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
+        {/*    <SelectContent position="popper">*/}
+        {/*      <SelectItem value="Admin">Admin</SelectItem>*/}
+        {/*      <SelectItem value="User">Người dùng</SelectItem>*/}
+        {/*    </SelectContent>*/}
+        {/*  </Select>*/}
+        {/*</div>*/}
 
         <div className="flex justify-between">
           <Button variant="outline" onClick={handlerBackToHome}>

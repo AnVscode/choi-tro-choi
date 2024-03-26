@@ -6,9 +6,10 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { pageRouter } from "@/constants/page-router";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 export default function FormSignIn() {
-  const appRouterInstance = useRouter();
+  const appRouterInstance: AppRouterInstance = useRouter();
 
   const handlerBackToHome = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
